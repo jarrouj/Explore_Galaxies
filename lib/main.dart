@@ -29,11 +29,12 @@ class OnBoardingPage extends StatelessWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            Column(children: [
-             const SizedBox(
+            const Column(
+              children: [
+              SizedBox(
                 height: 81,
               ),
-              const Row(
+               Row(
                 children: [
                   Text(
                     'Explore the \nUniverse',
@@ -45,10 +46,10 @@ class OnBoardingPage extends StatelessWidget {
                   ),
                 ],
               ),
-             const  SizedBox(
+               SizedBox(
                 height: 12,
               ),
-              const Row(
+               Row(
                 children: [
                   Text(
                     'Journey through the cosmos\nwith our space app',
@@ -56,40 +57,44 @@ class OnBoardingPage extends StatelessWidget {
                   )
                 ],
               ),
-             const SizedBox(
+              SizedBox(
                 height: 30,
               ),
-              Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                          
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const Pages()));
-                    },
-                    child: Container(
-                      width: 174,
-                      height: 47,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12)),
-                      child: const Center(
-                        child: Text(
-                          'Get Started',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
+             
+            ]),
+             Positioned(
+              top: 310,
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const Pages()));
+                      },
+                      child: Container(
+                        width: 174,
+                        height: 47,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12)),
+                        child: const Center(
+                          child: Text(
+                            'Get Started',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ]),
             Positioned(
                 top: 400,
                 left: 30,

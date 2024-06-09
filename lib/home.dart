@@ -200,23 +200,23 @@ class _HomePageState extends State<HomePage> {
                             return Padding(
                               padding:
                                   EdgeInsets.only(left: index == 0 ? 0 : 20),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                children: [
-                                  GestureDetector(
-                                    onTap: (){
-                                      Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (context) => Details(
-                                            title: item['title'] as String,
-                                            text: item['text'] as String,
-                                            image: item['image'] as String,
-                                            color: item['color'] as Color,
+                              child: GestureDetector(
+                                 onTap: (){
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) => Details(
+                                              title: item['title'] as String,
+                                              text: item['text'] as String,
+                                              image: item['image'] as String,
+                                              color: item['color'] as Color,
+                                            ),
                                           ),
-                                        ),
-                                      );
-                                    },
-                                    child: Container(
+                                        );
+                                      },
+                                child: Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    Container(
                                       width: 185,
                                       height: 236,
                                       decoration: BoxDecoration(
@@ -248,26 +248,26 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Positioned(
-                                    top: -70,
-                                    left: -25,
-                                    child: Image.asset(
-                                      item['image'] as String,
-                                      width: 200,
-                                      height: 200,
+                                    Positioned(
+                                      top: -70,
+                                      left: -25,
+                                      child: Image.asset(
+                                        item['image'] as String,
+                                        width: 200,
+                                        height: 200,
+                                      ),
                                     ),
-                                  ),
-                                  Positioned(
-                                    top: 150,
-                                    left: -15,
-                                    child: Image.asset(
-                                      item['icon'] as String,
-                                      width: 200,
-                                      height: 200,
+                                    Positioned(
+                                      top: 150,
+                                      left: -15,
+                                      child: Image.asset(
+                                        item['icon'] as String,
+                                        width: 200,
+                                        height: 200,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             );
                           },
